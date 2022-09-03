@@ -1,0 +1,9 @@
+How you can make changes in a shared code package and see those changes reflected quickly in your local kubernetes cluster on all the pods that use the shared code, both frontend and backend.
+
+Technologies used:
+Next.js
+Node.js
+Typescript
+Docker
+Kubernetes
+Skaffold
