@@ -1,0 +1,32 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./k8s/ingress.yml
+      - ./k8s/node-server-deployment.yml
+      - ./k8s/node-server-cluster-ip.yml
+      - ./k8s/next-client-deployment.yml
+      - ./k8s/next-client-cluster-ip.yml
+build:
+  local:
+    push: false
+  artifacts:
+    - image: snowd3n/node-server
+      context: .
+      docker:
+        dockerfile: dockerfiles/node-server.dev.Dockerfile
+      sync:
+        infer:
+          - "**/*.ts"
+          - "**/*.json"
+    - image: snowd3n/next-client
+      context: .
+      docker:
+        dockerfile: dockerfiles/next-client.dev.Dockerfile
+      sync:
+        infer:
+          - "**/*.ts"
+          - "**/*.tsx"
+          - "**/*.json"
+          - "**/*.css"

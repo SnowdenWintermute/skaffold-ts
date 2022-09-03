@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: next-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: next-client
+  template:
+    metadata:
+      labels:
+        component: next-client
+    spec:
+      containers:
+        - name: next-client
+          image: snowd3n/next-client
+          ports:
+            - containerPort: 3000

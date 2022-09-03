@@ -1,0 +1,20 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0",
+    "typescript": "^4.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "tsc-watch": "^5.0.3"
+  }
+}

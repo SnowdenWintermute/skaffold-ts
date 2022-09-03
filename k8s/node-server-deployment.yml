@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: node-server
+  template:
+    metadata:
+      labels:
+        component: node-server
+    spec:
+      containers:
+        - name: node-server
+          image: snowd3n/node-server
+          ports:
+            - containerPort: 80

@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "tscWatchAndServe": "tsc-watch -b --onSuccess \"node dist/index.js\"",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "express": "^4.18.1",
+    "typescript": "^4.8.2"
+  },
+  "devDependencies": {
+    "tsc-watch": "^5.0.3",
+    "@types/node": "^18.7.14",
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
